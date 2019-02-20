@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+
+.header h2 {
+  background:  #3f51b5;
+  color: #fff;
+  margin: 0 0 10px 0;
+  padding: 10px 5%;
+  font-size: 20px;
+  box-shadow: 0 1px 3px #999;
+}
+
+.details {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.details .detailstext {
+    visibility: hidden;
+    width: 230px;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.details:hover .detailstext {
+    visibility: visible;
+}
+
+  .button{
+    margin-top: 10px;
+    display: block; 
+    background-image: linear-gradient(#3f51b5,#220a37);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #3f51b5;
+    height: 40px;
+    width: 100px;
+    border-width: 0px;
+  }
+  .button:disabled{
+    background: #dddddd;
+  }
+
+  body {
+    min-width: 600px; 
+    max-width: 100%;
+    position: relative;
+    vertical-align:middle;
+  }
+
+
+ .scrollBox {
+   height: 120px;
+   width: 95%;
+   border: 1px solid #ccc;
+   overflow: auto;
+   padding: 10px;
+   margin: 5px;
+ }
+
+ div {
+    white-space: pre;
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+  <h2>Settings</h2>
+  </header>
+  <main>
+    <form>
+
+      <button class="button" type="button" id="toggle_button">Turn Off</button>
+      <br>
+
+      <fieldset>
+        <legend>Calculation Style:</legend>
+        <input id="fi_radio" type="radio" name="calc" value="fi" checked>
+          <label for="fi_number">FI Number:</label>
+          <input type="text" id="fi_number" name="fi_number" value="1000000" required><br>
+        <input id="salary_radio" type="radio" name="calc" value="salary">
+          <label for="salary">Yearly Salary:</label>
+          <input type="text" id="salary" name="fi_salary" value="50000" required>
+
+        <button class="button" type="button" id="update_button">Update</button>
+      </fieldset>
+    </form>
+    <!-- <p id="result"></p> -->
+
+<!--     <div id="results_div" hidden="true">
+      <button id="copy">Copy To Clipboard</button>
+      <textarea id="scrollBox" class="scrollBox" readonly></textarea>
+    </div>
+ --> 
+  </main>
+
+  <script type="text/javascript" src="./script/popup.js"></script>
+</body>
+</html>
